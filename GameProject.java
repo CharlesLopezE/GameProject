@@ -81,5 +81,13 @@ public class GameProject {
             break;
             default:
                 System.out.println("Select the correct hero name to continue");
+
+// Fix Later
+      if (heroName.equals("Knight")){
+        String knightInv;
+          knightInv = "Iron Sword, Wooden Shield, Iron Armor";
+          System.out.println("Your Starting equipment will be" + knightInv);
+      }
         }
     }
+}
