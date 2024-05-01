@@ -52,6 +52,8 @@ public class GameProject {
         }
         // allows to input the chracter names that is above inside the string...
         Scanner chrInput = new Scanner (System.in);
+        
+        while(true){
 
         System.out.println();
         System.out.print("Enter: ");
@@ -66,6 +68,7 @@ public class GameProject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
         switch (heroName){
             case "Knight": 
                 System.out.println( "Your quest is to save the princess that is held captive in a castle!");
@@ -81,6 +84,7 @@ public class GameProject {
             break;
             default: 
                 System.out.println("Select the correct hero name to continue");
+            }
         }
     }
 }
