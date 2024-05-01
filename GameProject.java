@@ -7,7 +7,7 @@ public class GameProject {
         System.out.println();
         System.out.println("Welcome to Medieval Dungeons");
         System.out.println();
-        //This is the start of the game, if press 1 you may continue, press 2 a little warning, 
+        //This is the start of the game, if press 1 you may continue, press 2 a little warning,
         //and anything other than 1 or 2 the game will hate you...
         while (true) {
             System.out.print("Start Game: ");
@@ -44,7 +44,7 @@ public class GameProject {
         // Add more character selection logic here
         System.out.println("Heroes:");
         System.out.println();
-        
+
         //makes the list of charcaters tha are inside the string...
         String[] characterNames = {"Knight", "Mage", "Prisoner", "Paladin"};
         for (String name : characterNames){
@@ -52,8 +52,6 @@ public class GameProject {
         }
         // allows to input the chracter names that is above inside the string...
         Scanner chrInput = new Scanner (System.in);
-        
-        while(true){
 
         System.out.println();
         System.out.print("Enter: ");
@@ -68,23 +66,20 @@ public class GameProject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        
         switch (heroName){
-            case "Knight": 
+            case "Knight":
                 System.out.println( "Your quest is to save the princess that is held captive in a castle!");
             break;
-            case "Mage": 
+            case "Mage":
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
             break;
-            case "Prisoner":
-                System.out.println("Your quest is to escape prison and fight for your innocence!");
+            case "Assassin":
+                System.out.println("You will find the ancient artifact to save the creed");
             break;
             case "Paladin":
                 System.out.println("Your quest is to save the village from a horde of zombies!");
             break;
-            default: 
+            default:
                 System.out.println("Select the correct hero name to continue");
-            }
         }
     }
-}
