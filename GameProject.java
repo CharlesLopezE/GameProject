@@ -69,6 +69,11 @@ public class GameProject {
         switch (heroName){
             case "Knight":
                 System.out.println( "Your quest is to save the princess that is held captive in a castle!");
+                if (heroName.equals("Knight")){
+                  String knightInv;
+                    knightInv = "Iron Sword, Wooden Shield, Iron Armor";
+                    System.out.println("Your Starting equipment will be " + knightInv);
+                }
             break;
             case "Mage":
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
@@ -82,12 +87,7 @@ public class GameProject {
             default:
                 System.out.println("Select the correct hero name to continue");
 
-// Fix Later
-      if (heroName.equals("Knight")){
-        String knightInv;
-          knightInv = "Iron Sword, Wooden Shield, Iron Armor";
-          System.out.println("Your Starting equipment will be" + knightInv);
-      }
+
         }
     }
 }
