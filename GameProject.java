@@ -58,7 +58,7 @@ public class GameProject {
         String heroName = chrInput.nextLine();
 
         System.out.println();
-        System.out.println("Welcome " + heroName + " ! Let your journey commence!");
+        System.out.println("Welcome " + heroName + "! Let your journey commence!");
         System.out.println();
 
         try {
@@ -74,13 +74,13 @@ public class GameProject {
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
             break;
             case "Prisoner":
-                
+                System.out.println("Your quest is to escape prison and fight for your innocence!");
             break;
             case "Paladin":
-
+                System.out.println("Your quest is to save the village from a horde of zombies!");
             break;
             default: 
-                System.out.println("....");
+                System.out.println("Select the correct hero name to continue");
         }
     }
 }
