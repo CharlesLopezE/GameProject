@@ -32,7 +32,7 @@ public class GameProject {
     private static void playGame() {
         // // Introduce a 3-second delay
         // try {
-        //     Thread.sleep(3000); // 3000 milliseconds = 3 seconds
+        //     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
         // } catch (InterruptedException e) {
         //     e.printStackTrace();
         // }
@@ -51,7 +51,7 @@ public class GameProject {
             System.out.println("- " + name);
         }
         // allows to input the chracter names that is above inside the string...
-        Scanner chrInput = new Scanner (System.in);
+        Scanner gameInput = new Scanner (System.in);
 
         boolean validHero = false;
 
@@ -59,14 +59,14 @@ public class GameProject {
 
         System.out.println();
         System.out.print("Enter: ");
-        String heroName = chrInput.nextLine();
+        String heroName = gameInput.nextLine();
 
         System.out.println();
         System.out.println("Welcome " + heroName + "! Let your journey commence!");
         System.out.println();
 
         // try {
-        //     Thread.sleep(3000); // 3000 milliseconds = 3 seconds
+        //     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
         // } catch (InterruptedException e) {
         //     e.printStackTrace();
         // }
@@ -77,17 +77,65 @@ public class GameProject {
                 if (heroName.equals("Knight")){
                   String knightInv;
                     knightInv = "Iron Sword, Wooden Shield, Iron Armor";
-                    System.out.println("");
+                    System.out.println();
                     System.out.println("Your Starting equipment will be " + knightInv);
-                    System.out.println("");
+                    System.out.println();
+                    int health = 100;
+                    System.out.println("Your health: " + health);
+                    System.out.println();
                 }
             break;
             case "Mage":
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
                 validHero = true;
+                if (heroName.equals("Mage")){
+                    String mageInv;
+                      mageInv = "Magic Staff, Wooden Shield, Light Iron Armor";
+                      System.out.println();
+                      System.out.println("Your Starting equipment will be " + mageInv);
+                      System.out.println();
+                      int health = 80;
+                      System.out.println("Your health: " + health);
+                      System.out.println();
+                }
+                // try {
+                //     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+                // } catch (InterruptedException e) {
+                //     e.printStackTrace();
+                // }
+                System.out.println("You come across a town and a townfolk aproaches you.");
+                System.out.println();
+                System.out.println("Townfoll: 'You there! are you a mage!?'");
+                System.out.println();
+                System.out.print("Enter 'yes' to continue or 'no' to end game: ");
+                String userResp = gameInput.nextLine();
+
+                while (!userResp.equalsIgnoreCase("yes") && !userResp.equalsIgnoreCase("no")){
+                    System.out.println();
+                    System.out.println("Townfolk: 'I didn't quiet get that.' Choose 'yes' or 'no'.");
+                    System.out.println();
+                    System.out.print("Enter 'yes' to continue or 'no' to end the game: ");
+                    userResp = gameInput.nextLine();
+                }
+
+                if (userResp.equalsIgnoreCase("yes")){
+                    System.out.println();
+                    System.out.println("Townfolk: 'Ah, you are! Then you are well enough to take down the corrupt wizard!'");
+                    System.out.println();
+                    System.out.println("Townfolk: 'Head to the cathedral to stop him!'");
+                    System.out.println();
+                    System.out.println("You head to the cathedral but encounter a chest.");
+                    System.out.println();
+                }
+                else if (userResp.equalsIgnoreCase("no")){
+                    System.out.println("Well then, I guess we are doomed...");
+                    System.out.println();
+                    System.out.println("Game over. Thanks for playing!");
+                    System.out.println();
+                } 
             break;
             case "Assassin":
-                System.out.println("You will find the ancient artifact to save the creed");
+                System.out.println("You will find the ancient artifact to save the creed!");
                 validHero = true;
             break;
             case "Paladin":
