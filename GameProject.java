@@ -30,12 +30,12 @@ public class GameProject {
 
     // Placeholder for character selection
     private static void playGame() {
-        // Introduce a 3-second delay
-        try {
-            Thread.sleep(3000); // 3000 milliseconds = 3 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // // Introduce a 3-second delay
+        // try {
+        //     Thread.sleep(3000); // 3000 milliseconds = 3 seconds
+        // } catch (InterruptedException e) {
+        //     e.printStackTrace();
+        // }
 
         // Continue with the game...
         System.out.println();
@@ -46,12 +46,16 @@ public class GameProject {
         System.out.println();
 
         //makes the list of charcaters tha are inside the string...
-        String[] characterNames = {"Knight", "Mage", "Prisoner", "Paladin"};
+        String[] characterNames = {"Knight", "Mage", "Assassin", "Paladin"};
         for (String name : characterNames){
             System.out.println("- " + name);
         }
         // allows to input the chracter names that is above inside the string...
         Scanner chrInput = new Scanner (System.in);
+
+        boolean validHero = false;
+
+        while(!validHero){
 
         System.out.println();
         System.out.print("Enter: ");
@@ -61,25 +65,38 @@ public class GameProject {
         System.out.println("Welcome " + heroName + "! Let your journey commence!");
         System.out.println();
 
-        try {
-            Thread.sleep(3000); // 3000 milliseconds = 3 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // try {
+        //     Thread.sleep(3000); // 3000 milliseconds = 3 seconds
+        // } catch (InterruptedException e) {
+        //     e.printStackTrace();
+        // }
         switch (heroName){
             case "Knight":
                 System.out.println( "Your quest is to save the princess that is held captive in a castle!");
+                validHero = true;
+                if (heroName.equals("Knight")){
+                  String knightInv;
+                    knightInv = "Iron Sword, Wooden Shield, Iron Armor";
+                    System.out.println("");
+                    System.out.println("Your Starting equipment will be " + knightInv);
+                    System.out.println("");
+                }
             break;
             case "Mage":
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
+                validHero = true;
             break;
             case "Assassin":
                 System.out.println("You will find the ancient artifact to save the creed");
+                validHero = true;
             break;
             case "Paladin":
                 System.out.println("Your quest is to save the village from a horde of zombies!");
+                validHero = true;
             break;
             default:
-                System.out.println("Select the correct hero name to continue");
+                System.out.println("Select the correct hero name to continue...");
+            }
         }
     }
+}
