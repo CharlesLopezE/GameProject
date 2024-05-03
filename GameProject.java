@@ -80,7 +80,7 @@ public class GameProject {
                   String knightInv;
                     knightInv = "Iron Sword, Wooden Shield, Iron Armor";
                     System.out.println();
-                    System.out.println("Your Starting equipment will be " + knightInv);
+                    System.out.println("Your starting equipment will be " + knightInv);
                     System.out.println();
                     int health = 100;
                     System.out.println("Your health: " + health);
