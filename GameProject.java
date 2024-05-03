@@ -107,14 +107,14 @@ public class GameProject {
                 }
                 System.out.println("You come across a town and a townfolk aproaches you.");
                 System.out.println();
-                System.out.println("Townfoll: 'You there! are you a mage!?'");
+                System.out.println("Townfoll: 'You there! Are you a mage!?'");
                 System.out.println();
                 System.out.print("Enter 'yes' to continue or 'no' to end game: ");
                 String userResp = gameInput.nextLine();
 
                 while (!userResp.equalsIgnoreCase("yes") && !userResp.equalsIgnoreCase("no")){
                     System.out.println();
-                    System.out.println("Townfolk: 'I didn't quiet get that.' Choose 'yes' or 'no'.");
+                    System.out.println("Townfolk: 'I didn't quite get that.' Choose 'yes' or 'no'.");
                     System.out.println();
                     System.out.print("Enter 'yes' to continue or 'no' to end the game: ");
                     userResp = gameInput.nextLine();
