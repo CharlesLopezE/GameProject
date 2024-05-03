@@ -180,6 +180,7 @@ public class GameProject {
                     System.out.println();
                     System.out.println("Game over. Thanks for playing!");
                     System.out.println();
+                    System.exit(0);
                 } 
                 System.out.println();
                 System.out.println("You have reached the entrance of the cathedral.");
