@@ -94,7 +94,7 @@ public class GameProject {
                     String mageInv;
                       mageInv = "Magic Staff, Scroll of Fireball, Light Iron Armor";
                       System.out.println();
-                      System.out.println("Your Starting equipment will be " + mageInv);
+                      System.out.println("Your starting equipment will be " + mageInv);
                       System.out.println();
                       int health = 80;
                       System.out.println("Your health: " + health);
@@ -155,18 +155,18 @@ public class GameProject {
                         System.out.print("Choose an item by choosing its number:");
                         int selectItem = gameInput.nextInt();
                         System.out.println();
-                        
+
 
                         switch (selectItem) {
-                            case 1: 
+                            case 1:
                                 System.out.println("You have chosen the Scroll of Lightning! You feel a spark!");
                             break;
-                            case 2: 
+                            case 2:
                                 System.out.println("You have taken a Health Potion! You feel lavished!");
                             break;
-                            case 3: 
+                            case 3:
                                 System.out.println("You have taken a Metal Shield! Great durability!");
-                            default: 
+                            default:
                                 System.out.println("No decision was made, you left the chest untouched.");
                         }
                     } else {
@@ -181,7 +181,7 @@ public class GameProject {
                     System.out.println("Game over. Thanks for playing!");
                     System.out.println();
                     System.exit(0);
-                } 
+                }
                 System.out.println();
                 System.out.println("You have reached the entrance of the cathedral.");
                 System.out.println();
