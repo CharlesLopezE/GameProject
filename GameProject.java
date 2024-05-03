@@ -90,7 +90,7 @@ public class GameProject {
                 validHero = true;
                 if (heroName.equals("Mage")){
                     String mageInv;
-                      mageInv = "Magic Staff, Wooden Shield, Light Iron Armor";
+                      mageInv = "Magic Staff, Scroll of Fireball, Light Iron Armor";
                       System.out.println();
                       System.out.println("Your Starting equipment will be " + mageInv);
                       System.out.println();
@@ -120,19 +120,56 @@ public class GameProject {
 
                 if (userResp.equalsIgnoreCase("yes")){
                     System.out.println();
-                    System.out.println("Townfolk: 'Ah, you are! Then you are well enough to take down the corrupt wizard!'");
+                    System.out.println("Townfolk: 'Ah, you are! Then you are well enough to take down the corrupted wizard!'");
                     System.out.println();
                     System.out.println("Townfolk: 'Head to the cathedral to stop him!'");
                     System.out.println();
                     System.out.println("You head to the cathedral but encounter a chest.");
                     System.out.println();
+                    System.out.print("Open the chest to see what is inside. ");
+
+                    String chestUse = gameInput.nextLine();
+
+                    if (chestUse.equalsIgnoreCase("yes")){
+                        System.out.println("You opened the chest and found the following items:");
+                        System.out.println("1. Scroll of Lightning...");
+                        System.out.println("2. Health Potion...");
+                        System.out.println("3. Metal Shield...");
+                        System.out.println();
+                        System.out.print("Choose an item by choosing its number:");
+                        int selectItem = gameInput.nextInt();
+                        System.out.println();
+                        
+
+                        switch (selectItem) {
+                            case 1: 
+                                System.out.println("You have chosen the Scroll of Lightning! You feel a spark!");
+                            break;
+                            case 2: 
+                                System.out.println("You have taken a Health Potion! You feel lavished!");
+                            break;
+                            case 3: 
+                                System.out.println("You have taken a Metal Shield! Great durability!");
+                            default: 
+                                System.out.println("No decision was made, you left the chest untouched.");
+                        }
+                    } else {
+                        System.out.println("You decided not to open the chest. You continue ur walk to the cathedral...");
+                    }
                 }
+
                 else if (userResp.equalsIgnoreCase("no")){
+                    System.out.println();
                     System.out.println("Well then, I guess we are doomed...");
                     System.out.println();
                     System.out.println("Game over. Thanks for playing!");
                     System.out.println();
                 } 
+                System.out.println();
+                System.out.println("You have reached the entrance of the cathedral.");
+                System.out.println();
+                System.out.println("You decided to enter to face the wizard.");
+                System.out.println();
             break;
             case "Assassin":
                 System.out.println("You will find the ancient artifact to save the creed!");
