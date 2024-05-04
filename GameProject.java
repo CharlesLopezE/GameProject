@@ -268,6 +268,11 @@ public class GameProject {
                         System.out.println();
                     }
                 }
+                try {
+                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 if (playerHP <= 0 && wizardHP <= 0 ) {
                     System.out.println("\nIn a final clash of magic, both you and the wizard fall...");
                     System.out.println();
