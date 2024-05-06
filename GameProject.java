@@ -229,7 +229,7 @@ public class GameProject {
 
                     switch (playerAct){
                         case 1:
-                            if(random.nextDouble() < 0.8){
+                            if(random.nextDouble() < 0.6){
                                 int playerDam = 20;
                                 wizardHP -= playerDam;
                                 System.out.println();
@@ -257,7 +257,7 @@ public class GameProject {
                         System.out.println();
                     }
 
-                    if (random.nextDouble() < 0.7){
+                    if (random.nextDouble() < 0.6){
                         int wizardDam = 25;
                         playerHP -= wizardDam;
                         System.out.println();
@@ -268,14 +268,28 @@ public class GameProject {
                         System.out.println();
                     }
                 }
-
-                if (playerHP <= 0) {
+                try {
+                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (playerHP <= 0 && wizardHP <= 0 ) {
+                    System.out.println("\nIn a final clash of magic, both you and the wizard fall...");
+                    System.out.println();
+                    System.out.println("The cathedral trembles as your powers collided...");
+                    System.out.println();
+                    System.out.println("The land mourns the loss of bith it's protectors...");
+                    System.out.println();
+                    System.out.println("Darkness evelops the town...");
+                    System.out.println();
+                } else if (playerHP <= 0) {
                     System.out.println("You have been defeated. The corrupted wizard triumphs the town.");
                     System.out.println();
                 } else {
                     System.out.println("Congrats! You have defeated the corrupted wizard!");
                     System.out.println();
-                    System.out.println("You emerge victorius and restore peace to the land.");
+                    System.out.println("You emerge victorius and restore peace to the land!");
+                    System.out.println();
                 }
             break;
             case "Assassin":
