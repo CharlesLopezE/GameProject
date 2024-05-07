@@ -12,6 +12,9 @@ public class GameProject {
         //and anything other than 1 or 2 the game will hate you...
         while (true) {
             System.out.print("Start Game: ");
+            System.out.println();
+            System.out.print("Enter 1 to start the game, anything else will hate you.");
+            System.out.println();
             int start = numInt.nextInt();
 
             switch (start) {
@@ -470,9 +473,217 @@ public class GameProject {
                 }
             break;
             case "Paladin":
-                System.out.println("Your quest is to save the village from a horde of zombies!");
-                validHero = true;
-            break;
+            System.out.println("Visit the head priest of the church.");
+            validHero = true;
+            if (heroName.equals("Paladin")){
+                String paladinInv;
+                    paladinInv = "an Iron Shield, an Iron Broadsword, and Heavy Iron Armor";
+                    System.out.println();
+                    System.out.println("You have " + paladinInv + " in your inventory.");
+                    System.out.println();
+                    int health = 100;
+                    System.out.println("Your starting health is " + health);
+                    System.out.println();
+            }
+            try {
+                Thread.sleep(1000); // should be 1000 milliseconds or 1 second; disliked the 2 second timer
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("You wake up as the sun rises, as you always have since the moment you joined the church.");
+            System.out.println();
+            try {
+                Thread.sleep(1000); //included a 1 second timer between each message so a blob of text doesn't just all appear.
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("You get ready for the day, and heads towards the church.");
+            System.out.println();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("As you enter the church, you see the head priest preparing for their prayer.");
+            System.out.println();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("'Ah, you arrived. Please, let's start our morning prayer.'");
+            System.out.println();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("When the prayers are finished, the head priest tells you about a recent corruption that has appeared nearby.");
+            System.out.println();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("'Do you swear to uphold the faith of our church?'");
+            System.out.println();
+            System.out.println("'To do good for our lord?'");
+            System.out.println();
+            System.out.println("'To be the light that quells the darkness?'");
+            System.out.println();
+            System.out.println("'If so, carry this holy shield and set forth to destroy the corruption in this world.'");
+            System.out.println();
+            System.out.println("Bear responsiblity and say 'Yes' or deny your purpose and say 'No'");
+            System.out.println();
+            String userAnswer = gameInput.nextLine();
+
+
+            //Continues the Paladin story line, or ends it
+            while (!userAnswer.equalsIgnoreCase("yes") && !userAnswer.equalsIgnoreCase("no")){
+                userAnswer = gameInput.nextLine();
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+                if (userAnswer.equalsIgnoreCase("yes")){
+                System.out.println();
+                System.out.println("'Good, wield the holy shield with honor.'");
+                System.out.println();
+
+
+                //Changes made to the Paladin
+                String paladinInv;
+                    paladinInv = "a Holy Shield, Blessed Iron Broadsword, and Heavy Iron Armor";
+                    System.out.println();
+                    System.out.println("Your inventory now consists of " + paladinInv);
+                    System.out.println();
+                    int health = 120;
+                    System.out.println("Your health is boosted to " + health);
+                    System.out.println();
+
+
+                    //List of moves for Paladin
+                String paladinMoves;
+                    paladinMoves = "1. Slash, 2. Light Slash, 3. Holy Defense";
+                System.out.println("You pack up, and start travelling towards the corruption that the priest talked about.");
+                System.out.println();
+                System.out.println("After a week of travel, you finally find the source of the corruption.");
+                System.out.println();
+
+                //Corruption Health Pool for the fight
+                int corruptionHP = 150;
+                int phealth = 120;
+                //Code for the fight itself
+                while (phealth > 0 && corruptionHP > 0) {
+                    System.out.println("Current Health: " + phealth);
+                    System.out.println("Corruption's Health: " + corruptionHP);
+                    System.out.println();
+                    System.out.println("Select a move.");
+                    System.out.println("Your moves: " + paladinMoves);
+                    System.out.println();
+                    int playerMove = gameInput.nextInt();
+                    gameInput.nextLine();
+
+                //switch for player moves
+                    switch (playerMove){
+                        case 1:
+                            if(random.nextDouble() < 0.9){
+                                int slashDmg = 25;
+                                corruptionHP -= slashDmg;
+                                System.out.println();
+                                System.out.println("You slashed at the corruption for " + slashDmg + " damage!");
+                                System.out.println();
+                            } else {
+                                int slashDmg = 5;
+                                corruptionHP -= slashDmg;
+                                System.out.println();
+                                System.out.println("You graze the corruption with the tip of your sword for " + slashDmg + " damage.");
+                                System.out.println();
+                            }
+                            break;
+                        case 2:
+                            if(random.nextDouble() < 0.4){
+                                int lightSlashDmg = 40;
+                                corruptionHP -= lightSlashDmg;
+                                System.out.println();
+                                System.out.println("You slash at the corruption with a strike of holy light for " + lightSlashDmg + " damage!");
+                                System.out.println();
+                            } else {
+                                System.out.println("You missed your attack!");
+                                System.out.println();
+                            }
+                            break;
+                        case 3:
+                            if(random.nextDouble() < 0.5){
+                                int healHP = 10;
+                                phealth += healHP;
+                                System.out.println();
+                                System.out.println("You heal yourself for " + healHP + " health!");
+                                System.out.println();
+                            } else {
+                                System.out.println();
+                                System.out.println("The god deny you health.");
+                                System.out.println();
+                            }
+                            break;
+                        default:
+                            System.out.println("You hesitated under the corruption's darkness. Please fight back.");
+                            System.out.println();
+                        }
+
+                //Corruption's damage calculations and fight
+                    if (random.nextDouble() < 0.5){
+                        int corruptionDmg = 20;
+                        phealth -= corruptionDmg;
+                        System.out.println();
+                        System.out.println("The corruption retaliates!");
+                        System.out.println();
+                        System.out.println("The corruption strikes back with it's darkness for " + corruptionDmg + " damage!");
+                        System.out.println();
+                    } else {
+                        int corruptionDmg = 10;
+                        phealth -= corruptionDmg;
+                        System.out.println();
+                        System.out.println("The corruptions strikes back!");
+                        System.out.println();
+                        System.out.println("You dodge the worse of the damage, however you still get wounded for " + corruptionDmg + " health.");
+                        System.out.println();
+                    }
+                }
+            //End of the fight for whoever wins
+            try {
+                Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+                if (phealth <= 0 && corruptionHP <= 0 ) {
+                    System.out.println();
+                    System.out.println("As you fall to your knees, the source of the corruption disperses into a fine mist before your eyes.");
+                    System.out.println();
+                    System.out.println("With your final breath, the corruption disappears from the lands as your god greets you warmly.");
+                    System.out.println();
+                } else if (phealth <= 0) {
+                    System.out.println("The corruption has corrupted you, the lands now darken even further as you spread chaos.");
+                    System.out.println();
+                } else  {
+                    System.out.println();
+                    System.out.println("The corruption is defeated, and the light shines brightly upon the lands as they regain their color.");
+                    System.out.println();
+                }
+
+        }
+
+                else if (userAnswer.equalsIgnoreCase("no")){
+                    System.out.println();
+                    System.out.println("'You bring shame to this church, leave now!'");
+                    System.out.println();
+                    System.out.println("You leave the church and heads towards another town, only to end up dying to the same corruption you could have ended.");
+                    System.out.println();
+                    System.exit(0);
+                }
+        break;
             default:
                 System.out.println("Select the correct hero name to continue...");
             }
