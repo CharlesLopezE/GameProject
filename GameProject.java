@@ -11,10 +11,9 @@ public class GameProject {
         //This is the start of the game, if press 1 you may continue, press 2 a little warning,
         //and anything other than 1 or 2 the game will hate you...
         while (true) {
-            System.out.print("Start Game: ");
-            System.out.println();
             System.out.print("Enter 1 to start the game, anything else will hate you.");
             System.out.println();
+            System.out.print("Start Game: ");
             int start = numInt.nextInt();
 
             switch (start) {
