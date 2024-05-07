@@ -47,7 +47,7 @@ public class GameProject {
         System.out.println();
 
         //makes the list of charcaters tha are inside the string...
-        String[] characterNames = {"Knight", "Mage", "Assassin", "Paladin"};
+        String[] characterNames = {"Mage", "Assassin", "Paladin"};
         for (String name : characterNames){
             System.out.println("- " + name);
         }
@@ -73,20 +73,6 @@ public class GameProject {
             e.printStackTrace();
         }
         switch (heroName){
-            case "Knight":
-                System.out.println( "Your quest is to save the princess that is held captive in a castle!");
-                validHero = true;
-                if (heroName.equals("Knight")){
-                  String knightInv;
-                    knightInv = "Iron Sword, Wooden Shield, Iron Armor";
-                    System.out.println();
-                    System.out.println("Your starting equipment will be " + knightInv);
-                    System.out.println();
-                    int health = 100;
-                    System.out.println("Your health: " + health);
-                    System.out.println();
-                }
-            break;
             case "Mage":
                 System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
                 validHero = true;
@@ -229,7 +215,7 @@ public class GameProject {
 
                     switch (playerAct){
                         case 1:
-                            if(random.nextDouble() < 0.8){
+                            if(random.nextDouble() < 0.6){
                                 int playerDam = 20;
                                 wizardHP -= playerDam;
                                 System.out.println();
@@ -257,7 +243,7 @@ public class GameProject {
                         System.out.println();
                     }
 
-                    if (random.nextDouble() < 0.7){
+                    if (random.nextDouble() < 0.6){
                         int wizardDam = 25;
                         playerHP -= wizardDam;
                         System.out.println();
@@ -268,14 +254,28 @@ public class GameProject {
                         System.out.println();
                     }
                 }
-
-                if (playerHP <= 0) {
+                try {
+                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (playerHP <= 0 && wizardHP <= 0 ) {
+                    System.out.println("\nIn a final clash of magic, both you and the wizard fall...");
+                    System.out.println();
+                    System.out.println("The cathedral trembles as your powers collided...");
+                    System.out.println();
+                    System.out.println("The land mourns the loss of bith it's protectors...");
+                    System.out.println();
+                    System.out.println("Darkness evelops the town...");
+                    System.out.println();
+                } else if (playerHP <= 0) {
                     System.out.println("You have been defeated. The corrupted wizard triumphs the town.");
                     System.out.println();
                 } else {
                     System.out.println("Congrats! You have defeated the corrupted wizard!");
                     System.out.println();
-                    System.out.println("You emerge victorius and restore peace to the land.");
+                    System.out.println("You emerge victorius and restore peace to the land!");
+                    System.out.println();
                 }
             break;
             case "Assassin":
@@ -283,25 +283,25 @@ public class GameProject {
                 validHero = true;
                 if (heroName.equals("Assassin")){
                     String AssassinInv;
-                      AssassinInv = "Iron Dagger, Assassin Robes, Crossbow, Hidden Blade.";
-                      System.out.println();
-                      System.out.println("Your starting equipment will be " + AssassinInv);
-                      System.out.println();
-                      int health = 85;
-                      System.out.println("Your health: " + health);
-                      System.out.println();
+                    AssassinInv = "Iron Dagger, Assassin Robes, Crossbow, Hidden Blade.";
+                    System.out.println();
+                    System.out.println("Your starting equipment will be " + AssassinInv);
+                    System.out.println();
+                    int health = 85;
+                    System.out.println("Your health: " + health);
+                    System.out.println();
                 }
                 try {
                     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("You Head into the lair of the Brotherhood");
-                System.out.println();
-                System.out.println("Brother: 'Assassin, We have a mission for you will you accept?'");
-                System.out.println();
-                System.out.print("Enter 'yes' to continue or 'no' to end game: ");
-                String AssassinResp = gameInput.nextLine();
+                    System.out.println("You Head into the lair of the Brotherhood");
+                    System.out.println();
+                    System.out.println("Brother: 'Assassin, We have a mission for you will you accept?'");
+                    System.out.println();
+                    System.out.print("Enter 'yes' to continue or 'no' to end game: ");
+                    String AssassinResp = gameInput.nextLine();
 
                 while (!AssassinResp.equalsIgnoreCase("yes") && !AssassinResp.equalsIgnoreCase("no")){
                     System.out.println();
@@ -329,110 +329,110 @@ public class GameProject {
 
                     String chestUse = gameInput.nextLine();
 
-                    try {
-                        Thread.sleep(2000); // 2000 milliseconds = 2 seconds
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    if (chestUse.equalsIgnoreCase("yes")){
-                        System.out.println();
-                        System.out.println("You opened the chest and found the following items:");
-                        System.out.println();
-                        System.out.println("1. Cloak of Invisibility...");
-                        System.out.println("2. Health Potion...");
-                        System.out.println("3. Hidden Blade Gun");
-                        System.out.println();
-                        System.out.print("Choose an item by choosing its number:");
-                        int selectItem = gameInput.nextInt();
-                        System.out.println();
-
-
-                        switch (selectItem) {
-                            case 1:
-                                System.out.println("You have chosen the Invisibility, You now hide in the shadows more effectively");
-                            break;
-                            case 2:
-                                System.out.println("You have taken a Health Potion! You feel lavished!");
-                            break;
-                            case 3:
-                                System.out.println("You have taken the Hidden Blade Gun, Caution It'll cause a lot of noise, not very Assassin like");
-                            default:
-                                System.out.println("No decision was made, you left the chest untouched.");
-                        }
-                    } else {
-                        System.out.println("You decided not to open the chest. You go to your mission location");
-                    }
-                }
-
-                else if (AssassinResp.equalsIgnoreCase("no")){
-                    System.out.println();
-                    System.out.println("Traitor!, You will be exiled from the Brotherhood!");
-                    System.out.println();
-                    System.out.println("Game over. Thanks for playing!");
-                    System.out.println();
-                    System.exit(0);
-                }
-                System.out.println();
-                System.out.println("You have reached the entrance of the former Church");
-                System.out.println();
                 try {
                     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("You decided to enter stealthly to steal the Sword of Eden");
-                System.out.println();
-                try {
-                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("The quiet Church suddenly got filled with the chorus of the Templars");
-                System.out.println();
-                try {
-                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("The Templar Grandmaster spots you!");
-                System.out.println();
-                try {
-                    Thread.sleep(2000); // 2000 milliseconds = 2 seconds
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("The battle begins immediately!");
-                System.out.println();
 
-                int AssassinHP = 85;
-                int TemplarHP = 120;
-
-                while (AssassinHP > 0 && TemplarHP > 0) {
-                    System.out.println("Your Health: " + AssassinHP);
-                    System.out.println("Templar Health: " + TemplarHP);
+                if (chestUse.equalsIgnoreCase("yes")){
                     System.out.println();
-                    System.out.println("Choose your action:");
-                    System.out.println("1. Attack");
-                    System.out.println("2. Use Projectile");
-                    int playerAct = gameInput.nextInt();
-                    gameInput.nextLine();
+                    System.out.println("You opened the chest and found the following items:");
+                    System.out.println();
+                    System.out.println("1. Cloak of Invisibility...");
+                    System.out.println("2. Health Potion...");
+                    System.out.println("3. Hidden Blade Gun");
+                    System.out.println();
+                    System.out.print("Choose an item by choosing its number:");
+                    int selectItem = gameInput.nextInt();
+                    System.out.println();
 
-                    switch (playerAct){
+
+                    switch (selectItem) {
                         case 1:
-                            if(random.nextDouble() < 0.8){
-                                int playerDam = 40;
-                                TemplarHP -= playerDam;
-                                System.out.println();
-                                System.out.println("You dealt damage to the Templar with your Hidden blade! Templar's health -" + playerDam);
-                                System.out.println();
-                            } else {
-                                System.out.println();
-                                System.out.println("Your attack missed!");
-                                System.out.println();
-                            }
-                            break;
+                            System.out.println("You have chosen the Invisibility, You now hide in the shadows more effectively");
+                        break;
                         case 2:
+                            System.out.println("You have taken a Health Potion! You feel lavished!");
+                        break;
+                        case 3:
+                            System.out.println("You have taken the Hidden Blade Gun, Caution It'll cause a lot of noise, not very Assassin like");
+                        default:
+                            System.out.println("No decision was made, you left the chest untouched.");
+                    }
+                } else {
+                    System.out.println("You decided not to open the chest. You go to your mission location");
+                }
+            }
+
+            else if (AssassinResp.equalsIgnoreCase("no")){
+                System.out.println();
+                System.out.println("Traitor!, You will be exiled from the Brotherhood!");
+                System.out.println();
+                System.out.println("Game over. Thanks for playing!");
+                System.out.println();
+                System.exit(0);
+            }
+            System.out.println();
+            System.out.println("You have reached the entrance of the former Church");
+            System.out.println();
+            try {
+                Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("You decided to enter stealthly to steal the Sword of Eden");
+            System.out.println();
+            try {
+                Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("The quiet Church suddenly got filled with the chorus of the Templars");
+            System.out.println();
+            try {
+                Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("The Templar Grandmaster spots you!");
+            System.out.println();
+            try {
+                Thread.sleep(2000); // 2000 milliseconds = 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("The battle begins immediately!");
+            System.out.println();
+
+            int AssassinHP = 85;
+            int TemplarHP = 120;
+
+            while (AssassinHP > 0 && TemplarHP > 0) {
+                System.out.println("Your Health: " + AssassinHP);
+                System.out.println("Templar Health: " + TemplarHP);
+                System.out.println();
+                System.out.println("Choose your action:");
+                System.out.println("1. Attack");
+                System.out.println("2. Use Projectile");
+                int playerAct = gameInput.nextInt();
+                gameInput.nextLine();
+
+                switch (playerAct){
+                    case 1:
+                        if(random.nextDouble() < 0.8){
+                            int playerDam = 40;
+                            TemplarHP -= playerDam;
+                            System.out.println();
+                            System.out.println("You dealt damage to the Templar with your Hidden blade! Templar's health -" + playerDam);
+                            System.out.println();
+                        } else {
+                            System.out.println();
+                            System.out.println("Your attack missed!");
+                            System.out.println();
+                        }
+                    break;
+                    case 2:
                         if(random.nextDouble() < 0.7){
                             int ProjectileDam = 44;
                             TemplarHP -= ProjectileDam;
@@ -442,7 +442,7 @@ public class GameProject {
                             System.out.println("Your attack misses!");
                             System.out.println();
                         }
-                        break;
+                    break;
                     default:
                         System.out.println("Invalid action. You hesistated...");
                         System.out.println();
