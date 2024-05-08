@@ -359,6 +359,7 @@ public class GameProject {
                         break;
                         case 3:
                             System.out.println("You have taken the Hidden Blade Gun, Caution It'll cause a lot of noise, not very Assassin like");
+                        break;
                         default:
                             System.out.println("No decision was made, you left the chest untouched.");
                     }
