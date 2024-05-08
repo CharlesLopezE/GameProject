@@ -81,7 +81,7 @@ public class GameProject {
         }
         switch (heroName){
             case "Mage":
-                System.out.println("Your quest is to stop the corrupt Wizard from destroying the town!");
+                System.out.println("Stop the corrupted Wizard from destroying the town!");
                 validHero = true;
                 if (heroName.equals("Mage")){
                     String mageInv;
@@ -121,9 +121,9 @@ public class GameProject {
 
                 if (userResp.equalsIgnoreCase("yes")){
                     System.out.println();
-                    System.out.println("Townfolk: 'Ah, you are! Then you are well enough to take down the corrupted wizard!'");
+                    System.out.println("Townfolk: 'Ah, you are! Then you must be strong enough to take down the corrupted wizard!'");
                     System.out.println();
-                    System.out.println("Townfolk: 'Head to the cathedral to stop him!'");
+                    System.out.println("Townfolk: 'You'll find the corrupted wizard at the cathedral. Please stop them from destroying this town.'");
                     System.out.println();
                     System.out.println("You head to the cathedral but encounter a chest.");
                     System.out.println();
@@ -139,7 +139,7 @@ public class GameProject {
 
                     if (chestUse.equalsIgnoreCase("yes")){
                         System.out.println();
-                        System.out.println("You opened the chest and found the following items:");
+                        System.out.println("You opened the chest and find the following items:");
                         System.out.println();
                         System.out.println("1. Scroll of Lightning...");
                         System.out.println("2. Health Potion...");
@@ -162,13 +162,13 @@ public class GameProject {
                                 System.out.println("No decision was made, you left the chest untouched.");
                         }
                     } else {
-                        System.out.println("You decided not to open the chest. You continue ur walk to the cathedral...");
+                        System.out.println("You decided not to open the chest. You continue your walk to the cathedral.");
                     }
                 }
 
                 else if (userResp.equalsIgnoreCase("no")){
                     System.out.println();
-                    System.out.println("Well then, I guess we are doomed...");
+                    System.out.println("Well then, I guess we're done for...");
                     System.out.println();
                     System.out.println("Game over. Thanks for playing!");
                     System.out.println();
@@ -182,7 +182,7 @@ public class GameProject {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("You decided to enter to face the wizard.");
+                System.out.println("You enter the cathedral to face the wizard.");
                 System.out.println();
                 try {
                     Thread.sleep(2000); // 2000 milliseconds = 2 seconds
@@ -272,7 +272,7 @@ public class GameProject {
                     System.out.println();
                     System.out.println("The land mourns the loss of bith it's protectors...");
                     System.out.println();
-                    System.out.println("Darkness evelops the town...");
+                    System.out.println("Darkness envelops the town...");
                     System.out.println();
                 } else if (playerHP <= 0) {
                     System.out.println("You have been defeated. The corrupted wizard triumphs the town.");
@@ -285,7 +285,7 @@ public class GameProject {
                 }
             break;
             case "Assassin":
-                System.out.println("You will find the ancient artifact to save the creed!");
+                System.out.println("You must find the ancient artifact to save the creed!");
                 validHero = true;
                 if (heroName.equals("Assassin")){
                     String AssassinInv;
@@ -302,7 +302,7 @@ public class GameProject {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                    System.out.println("You Head into the lair of the Brotherhood");
+                    System.out.println("You head into the lair of the Brotherhood.");
                     System.out.println();
                     System.out.println("Brother: 'Assassin, We have a mission for you will you accept?'");
                     System.out.println();
@@ -325,13 +325,13 @@ public class GameProject {
 
                 if (AssassinResp.equalsIgnoreCase("yes")){
                     System.out.println();
-                    System.out.println("Brother 'Excellent! Take this map and head to the headmaster to be debriefed'");
+                    System.out.println("Brother 'Excellent! Take this map and head to the headmaster to be debriefed.'");
                     System.out.println();
-                    System.out.println("Headmaster: 'Welcome! Your mission is to go to the Underground Church and steal the Sword of Eden'");
+                    System.out.println("Headmaster: 'Welcome! Your mission is to go to the Underground Church and steal the Sword of Eden.'");
                     System.out.println();
-                    System.out.println("Headmaster: To be better equipped here is a chest with supplies you may need, but you only get one... You're not the only Assassin in this Brotherhood");
+                    System.out.println("Headmaster: To be better equipped here is a chest with supplies you may need, but you only get one... You're not the only Assassin in this Brotherhood.");
                     System.out.println();
-                    System.out.print("Will You open the chest to see what is inside? ");
+                    System.out.print("Will you open the chest to see what's inside? ");
 
                     String chestUse = gameInput.nextLine();
 
@@ -355,46 +355,46 @@ public class GameProject {
 
                     switch (selectItem) {
                         case 1:
-                            System.out.println("You have chosen the Invisibility, You now hide in the shadows more effectively");
+                            System.out.println("You have chosen the Invisibility, You now hide in the shadows more effectively.");
                         break;
                         case 2:
                             System.out.println("You have taken a Health Potion! You feel lavished!");
                         break;
                         case 3:
-                            System.out.println("You have taken the Hidden Blade Gun, Caution It'll cause a lot of noise, not very Assassin like");
+                            System.out.println("You have taken the Hidden Blade Gun, Caution it'll cause a lot of noise, not very Assassin like!");
                         break;
                         default:
                             System.out.println("No decision was made, you left the chest untouched.");
                     }
                 } else {
-                    System.out.println("You decided not to open the chest. You go to your mission location");
+                    System.out.println("You decided not to open the chest. You head to your mission location.");
                 }
             }
 
             else if (AssassinResp.equalsIgnoreCase("no")){
                 System.out.println();
-                System.out.println("Traitor!, You will be exiled from the Brotherhood!");
+                System.out.println("Traitor! You will be exiled from the Brotherhood!");
                 System.out.println();
                 System.out.println("Game over. Thanks for playing!");
                 System.out.println();
                 System.exit(0);
             }
             System.out.println();
-            System.out.println("You have reached the entrance of the former Church");
+            System.out.println("You have reached the entrance of the former church.");
             System.out.println();
             try {
                 Thread.sleep(2000); // 2000 milliseconds = 2 seconds
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("You decided to enter stealthly to steal the Sword of Eden");
+            System.out.println("You decided to stealthly enter to steal the Sword of Eden");
             System.out.println();
             try {
                 Thread.sleep(2000); // 2000 milliseconds = 2 seconds
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("The quiet Church suddenly got filled with the chorus of the Templars");
+            System.out.println("The quiet church suddenly fills with the chorus of the Templars.");
             System.out.println();
             try {
                 Thread.sleep(2000); // 2000 milliseconds = 2 seconds
@@ -430,7 +430,7 @@ public class GameProject {
                             int playerDam = 40;
                             TemplarHP -= playerDam;
                             System.out.println();
-                            System.out.println("You dealt damage to the Templar with your Hidden blade! Templar's health -" + playerDam);
+                            System.out.println("You dealt damage to the Templar with your hidden blade! Templar's health -" + playerDam);
                             System.out.println();
                         } else {
                             System.out.println();
@@ -443,7 +443,7 @@ public class GameProject {
                             int ProjectileDam = 44;
                             TemplarHP -= ProjectileDam;
                             System.out.println();
-                            System.out.println("You Shot the Templar! Templar's health -" + ProjectileDam);
+                            System.out.println("You shot the Templar! Templar's health -" + ProjectileDam);
                         } else {
                             System.out.println("Your attack misses!");
                             System.out.println();
@@ -458,7 +458,7 @@ public class GameProject {
                         int TemplarDam = 30;
                         AssassinHP -= TemplarDam;
                         System.out.println();
-                        System.out.println("The Templar Strikes back with the Sword Of Eden! Your health-" + TemplarDam);
+                        System.out.println("The Templar strikes back with the Sword Of Eden! Your health-" + TemplarDam);
                         System.out.println();
                     } else {
                         System.out.println("The Templar's attack misses!");
@@ -467,10 +467,10 @@ public class GameProject {
                 }
 
                 if (AssassinHP <= 0) {
-                    System.out.println("You have been Killed. The Brotherhood was destroyed");
+                    System.out.println("You have been killed. The Brotherhood was destroyed.");
                     System.out.println();
                 } else {
-                    System.out.println("Congrats! You have Killed the Templar Grandmaster");
+                    System.out.println("Congrats! You have killed the Templar Grandmaster");
                     System.out.println();
                     System.out.println("You stole the Sword Of Eden and protected the Brotherhood");
                 }
