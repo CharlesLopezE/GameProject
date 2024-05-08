@@ -1,3 +1,8 @@
+//GameProject from Group 9
+//Team member one: Andre Chotephanpong (Assassin)
+//Team member two: Ricky Chao (Paladin)
+//Team meber three: Charles Lopez-Martinez (Mage)
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -143,7 +148,6 @@ public class GameProject {
                         System.out.print("Choose an item by choosing its number:");
                         int selectItem = gameInput.nextInt();
                         System.out.println();
-
 
                         switch (selectItem) {
                             case 1:
@@ -349,7 +353,6 @@ public class GameProject {
                     int selectItem = gameInput.nextInt();
                     System.out.println();
 
-
                     switch (selectItem) {
                         case 1:
                             System.out.println("You have chosen the Invisibility, You now hide in the shadows more effectively");
@@ -537,7 +540,6 @@ public class GameProject {
             System.out.println();
             String userAnswer = gameInput.nextLine();
 
-
             //Continues the Paladin story line, or ends it
             while (!userAnswer.equalsIgnoreCase("yes") && !userAnswer.equalsIgnoreCase("no")){
                 userAnswer = gameInput.nextLine();
@@ -552,7 +554,6 @@ public class GameProject {
                 System.out.println("'Good, wield the holy shield with honor.'");
                 System.out.println();
 
-
                 //Changes made to the Paladin
                 String paladinInv;
                     paladinInv = "a Holy Shield, Blessed Iron Broadsword, and Heavy Iron Armor";
@@ -562,7 +563,6 @@ public class GameProject {
                     int health = 120;
                     System.out.println("Your health is boosted to " + health);
                     System.out.println();
-
 
                     //List of moves for Paladin
                 String paladinMoves;
